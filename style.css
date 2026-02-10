@@ -1,0 +1,253 @@
+:root {
+    --primary-color: #d36303;
+    --text-color: #000000;
+    --bg-color: #ffffff;
+    --section-bg-alt: #ffb02a;
+    --spacing-unit: 4rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+section {
+    padding: var(--spacing-unit) 2rem;
+    min-height: 80vh;
+    /* Ocupa casi toda la altura para dar importancia */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 20px solid rgba(255, 255, 255, 0.966);
+    /* Global border for all sections */
+}
+
+section:nth-child(even) {
+    background-color: var(--section-bg-alt);
+}
+
+h1,
+h2 {
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+p {
+    max-width: 60ch;
+    margin-bottom: 1.5rem;
+    font-size: 1.125rem;
+}
+
+/* Hero Specifics */
+#hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffb02a 0%, #d36303 100%);
+    border: 20px solid rgba(255, 255, 255, 0.966);
+    /* Adding white margin/frame */
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: rgb(255, 255, 255);
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s, background-color 0.2s;
+    margin-top: 2rem;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    background-color: #ffb02a;
+}
+
+.hero-signatures {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    z-index: 10;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Grid for Team/Product if needed */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 2rem;
+}
+
+.card {
+    background: hsl(41, 100%, 63%);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 3rem 1rem;
+    }
+}
+
+.img1 {
+    width: 100px;
+    height: 150px;
+    border-radius: 10%
+}
+
+.img2 {
+    width: 100px;
+    height: 160px;
+    border-radius: 10%
+}
+
+.img3 {
+    width: 100px;
+    height: 160px;
+    border-radius: 10%
+}
+
+.img4 {
+    width: 130px;
+    height: 150px;
+    border-radius: 10%
+}
+
+/* Specific override for full-width split section if desired, or just maximizing the inner container */
+#solucion {
+    padding: 0;
+    /* Remove padding to let image fill edge if needed, or at least maximize space */
+    display: flex;
+    flex-direction: row;
+    /* Horizontal layout for the section itself */
+    align-items: stretch;
+    /* Stretch children to full height */
+    justify-content: center;
+    overflow: hidden;
+    /* Contain the image */
+}
+
+#solucion .split-layout {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    /* Full width */
+    margin: 0;
+    gap: 0;
+    /* No gap for full split */
+    height: 100%;
+    /* Ensure it takes full height */
+    align-items: stretch;
+}
+
+#solucion .split-text {
+    flex: 0 0 50%;
+    /* 6/12 columns */
+    padding: 4rem;
+    /* Add padding back to text since we removed section padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Remove specific background to inherit section background (white/default) */
+    /* background-color: var(--section-bg-alt); */
+    text-align: left;
+}
+
+#solucion .split-text h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#solucion .split-text p {
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+#solucion .split-image {
+    flex: 0 0 50%;
+    /* 6/12 columns */
+    position: relative;
+    padding: 0;
+}
+
+#solucion .split-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Cover the area without distortion */
+    border-radius: 0;
+    /* Remove radius for full split look */
+    box-shadow: none;
+    display: block;
+}
+
+#solucion .cta-button {
+    align-self: flex-start;
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    #solucion {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    #solucion .split-layout {
+        flex-direction: column;
+    }
+
+    #solucion .split-text,
+    #solucion .split-image {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+
+    #solucion .split-image {
+        height: 300px;
+        /* Fixed height for mobile image */
+    }
+}
+
+h2 {
+    color: #000000;
+}
