@@ -621,3 +621,61 @@ section {
     font-size: 1.1rem;
     margin-bottom: 0;
 }
+
+/* Marketing Strategy Styles */
+.marketing-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.card-marketing {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem 2rem;
+    border-radius: var(--border-radius-card);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    min-height: 100%;
+    border-left: 5px solid var(--color-citrus);
+}
+
+.marketing-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-marketing h3 {
+    font-size: 1.4rem;
+    color: var(--color-olive);
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.card-marketing ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card-marketing li {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 1.2rem;
+    color: var(--color-black);
+}
+
+.card-marketing li::before {
+    content: "•";
+    color: var(--color-citrus);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+@media (max-width: 992px) {
+    .marketing-grid {
+        grid-template-columns: 1fr;
+    }
+}
